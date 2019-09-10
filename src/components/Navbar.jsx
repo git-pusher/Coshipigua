@@ -20,9 +20,8 @@ class Navbar extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     
-                    <div className="nav navbar-nav navbar-collapse collapse navbar-right">
-                        
-                        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <div className="nav navbar-nav navbar-collapse collapse">                        
+                        <ul className="navbar-nav mt-2 mt-lg-0 navbar-right">
                             <li className="nav-item active">
                                 <NavLink className="nav-link" to="#">Home <span className="sr-only">(current)</span></NavLink>
                             </li>

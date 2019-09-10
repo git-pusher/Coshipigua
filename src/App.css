@@ -35,14 +35,7 @@
 
 
 /* -------------------NAVBAR---------------------------- */
-.container {
-  /* width: auto; */
-  max-width: 1500px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
+
 
 #header-nav {
   background: yellow
@@ -53,11 +46,11 @@
 }
 
 .navbar-right {
-  float: right!important;
+  margin-left: auto!important;
 }
 
 .navbar-brand {
-  float: left;
+  /* float: left; */
   height: 50px;
 }
 
@@ -68,42 +61,56 @@
 
 /* HERO */
 #hero {
-  background: #b8dec9
+  background: rgb(196, 196, 11);
+  
+  /* position: absolute; */
+   
+}
+
+.cocho {
+  padding-top: .5rem;
+  padding-bottom: calc(10rem - 72px);
+  background: url("./img/marranito.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 /* Fin del Hero */
 
 /* footer */
 #footer {
-  background: #42929f;
+  background: yellow;
   width: 100%;
   margin: 0;
   padding: 0;
+
 }
 
 #footer hr {
   height: 0px;
   width: 100px;
   overflow: visible;
-  border-color: white;
+  border-color: black;
   margin: 5px auto;
 }
 
 li {
-  color:white;
+  color:black;
   text-decoration: none;
 }
 
 li:hover {
-  color: #00050a;
+  color: white;
   text-decoration: none;
 }
 
 .hca {
-  color: white;
+  color: black;
 }
 
 .Coshipigua {
-  color: white;
+  color: black;
 }
 
 .Coshipigua:hover {
