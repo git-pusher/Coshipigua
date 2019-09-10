@@ -1,15 +1,21 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import Navbar from './components/Navbar';
+import {Switch, BrowserRouter as Router, Route} from 'react-router-dom'
+import Layout from './pages/Layout'
+import Coshipigua from './pages/Coshipigua';
 
 import './App.css';
+
 
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Coshipigua}/>
+          </Switch>
+        </Layout>
       </Router>
     </div>
   );
