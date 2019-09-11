@@ -15,15 +15,16 @@ class Footer extends Component {
                     <div className="row text-center foo">
                         <div className="col-12 col-lg">
                             <span className="hca">Con  </span>
-                            <span className="hca">💗</span>                        
+                            <span className="hca" role="img" aria-label="">💗</span>                        
                             <span className="hca">de </span>   
                             <span className="hca"> 
                                 <a 
                                 href="https://www.instagram.com/coshipigua/"
                                 target= "_blank"
+                                rel="noopener noreferrer"
                                 className="Coshipigua"> Coshipigua</a>                                
                             </span>  
-                            <span className="hca">🐽</span>                    
+                            <span className="hca" role="img" aria-label="">🐽</span>                    
                         </div>             
                     </div>                  
                 </div>  

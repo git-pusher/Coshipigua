@@ -1,18 +1,25 @@
 .card {
     /* background: rgb(180, 16, 16); */
-    
+    /* height: 380px; */
     border-radius: 8px 8px 8px 8px;
     overflow: hidden;
-    height: 380px;
     -webkit-box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62);
     -moz-box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62);
     box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62); 
   }
 
   .card-header {
-      background-color: rgb(202, 206, 3)
+      background-color:rgb(243, 243, 37)
   }
 
+  .card-body {
+    background-color: rgb(239, 240, 196)
+  }
   .card-footer {
-      background-color: rgb(247, 248, 168)
+      background-color:rgb(243, 243, 37)
+  }
+
+  .material-icons {
+      margin: 0;
+   
   }

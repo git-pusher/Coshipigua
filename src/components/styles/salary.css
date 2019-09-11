@@ -1,0 +1,27 @@
+.month {
+    background-color: #f7f8e2;
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden;
+    -webkit-box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62);
+    -moz-box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62);
+    box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62); 
+    max-width: 50%;
+}
+
+.salaryMonth {
+    padding-top: 15px
+}
+
+label {
+    margin-left: 8px
+}
+
+.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: #f3f325;
+}
+
+.btn-salary {
+    background-color: #f3f325
+}

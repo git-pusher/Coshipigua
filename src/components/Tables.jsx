@@ -6,9 +6,38 @@ import'./styles/tables.css';
 class Tables extends React.Component {
     constructor(props) {
 		super(props);
-		this.state = {}
+		this.state = {
+            // description: '',
+            // quantity: ''
+        }
+    }
+
+    change = (event) => {
+        this.setState({description: event.target.value})
+        this.setState({quantity: event.target.value})
+
+        console.log(event.target.value);
+        
     }
     
+    validateInputs = () => {
+        var description = this.state.description;
+
+        if(description){
+            description.addClass('is-invalid')
+        }
+        
+        //verifica que no sea nulo o vacío
+        // if( description.value() && quantity.value() )// add()
+      }
+
+
+
+    add = (e) => {
+        // e.preventDefault();
+        console.log('guardando');
+    }
+
     render(){
         return (
             <div className="container">
@@ -16,47 +45,32 @@ class Tables extends React.Component {
                     <div className="col-md-9">
                         <div className="card my-5 bg-light text-center sueldo">
                             <div className="card-header">
-                                <h1>SUELDO</h1>
+                                <h1>Materia prima</h1>
                             </div>
                             <div className="card-body">
                                 <table className="table table-hover"> 
                                     <thead>
                                         <tr>
                                             <th scope="col">Descripción</th>
-                                            <th scope="col">Monto</th>
+                                            <th scope="col">Cantidad</th>
                                         <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     </tbody>
-                                    {/* <thead className="thead-light">
-                                        <tr>
-                                            <th>Totals</th>
-                                            <th id="totalCalories">0</th>
-                                            <th id="totalCarbs">0</th>
-                                            <th id="totalProtein">0</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead> */}
                                 </table>
                             </div>
                             <div className="card-footer">
                                 <div className="row mb-2">
-                                    <div className="col">
-                                        <input type="text" className="form-control mb-2 mr-sm-2" id="description" placeholder="Descripción"/>
+                                    <div className="col-lg-5 col-md-12" >
+                                        <input type="text" className="form-control mb-2 mr-sm-2" id="description" onChange={this.change} placeholder="Descripción"/>
                                     </div>
-                                    <div className="col">
-                                        <input type="number" min="0" className="form-control mb-2 mr-sm-2" id="calories" placeholder="Monto"/>
-                                    </div>
-                                   {/* <div className="col">
-                                        <input type="number" min="0" className="form-control mb-2 mr-sm-2" id="carbs" placeholder="Carbs"/>
-                                    </div> */}
-                                    {/* <div className="col">
-                                        <input type="number" min="0" className="form-control mb-2 mr-sm-2" id="protein" placeholder="Protein"/>
-                                    </div> */}
-                                    <div className="col">
-                                        <button className="btn btn-primary mb-2" onclick="validateInputs()">
-                                            <MaterialIcon icon="add" className="material-icons"></MaterialIcon>
+                                    <div className="col-lg-5 col-md-12">
+                                        <input type="number" min="0" className="form-control mb-2 mr-sm-2" id="quantity" onChange={this.change} placeholder="Cantidad"/>
+                                    </div>                                 
+                                    <div className="col-lg-2 col-md-12">
+                                        <button type="submit" className="btn mb-2" >
+                                            <MaterialIcon icon="add" className="material-icons" onClick="validateInputs()"></MaterialIcon>
                                         </button>
                                     </div>
                                 </div>
