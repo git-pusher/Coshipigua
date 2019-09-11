@@ -16,20 +16,20 @@ class Hero extends Component {
         console.log(this.props.location);
         return (
             <div className="container-fluid h-100" id="hero">
-                <div className="row row-hero" >
+                <div className="row h-100 row-hero" >
                     <div className="col-12 col-lg-6 d-none d-md-block">
                         
-                            {/* <img className="cocho d-block w-100" src={marranito}  alt="marranito"/> */}
+                            <img className="cocho d-block w-100" src={marranito}  alt="marranito"/>
                                      
                     </div>
                     <div className="col-12 col-lg-6">
                         <div className="container">
-                            <div className="row align-items-center">
-                                <div className="col-md-6 text-center text-md-right">
-                                    <h1 className="text-uppercase">¿No sabes cuánto cobrar por tu trabajo?</h1>
-                                    <Link to="/" className="btn btn-" >Calculadora</Link>
+                            {/* <div className="row align-items-center"> */}
+                                <div className="col-lg-12 col-md-6 artesano">
+                                    <h1 className="text-uppercase">¿Cuánto vale tu trabajo?</h1>
+                                    <Link to="/Calculadora-de-costos" className="btn btn-" >Calculadora</Link>
                                 </div>
-                            </div>
+                            {/* </div> */}
                         </div>
                     </div>
                       

@@ -46,7 +46,7 @@
 }
 
 .navbar-right {
-  margin-left: auto!important;
+  /* margin-left: auto!important; */
 }
 
 .navbar-brand {
@@ -62,19 +62,25 @@
 /* HERO */
 #hero {
   background: rgb(196, 196, 11);
-  
+  margin-left: 0px;
   /* position: absolute; */
    
 }
 
 .cocho {
-  padding-top: .5rem;
-  padding-bottom: calc(10rem - 72px);
-  background: url("./img/marranito.png");
+  /* padding-top: 5px; */
+  /* padding-bottom: calc(10rem - 72px); */
+  /* background: url("./img/marranito.png"); */
+  padding-left: 0px;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+}
+
+.artesano {
+  text-align: center;
+  align-items: center
 }
 /* Fin del Hero */
 

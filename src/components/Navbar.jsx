@@ -20,16 +20,19 @@ class Navbar extends Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     
-                    <div className="nav navbar-nav navbar-collapse collapse">                        
-                        <ul className="navbar-nav mt-2 mt-lg-0 navbar-right">
-                            <li className="nav-item active">
-                                <NavLink className="nav-link" to="#">Home <span className="sr-only">(current)</span></NavLink>
+                    <div className="nav navbar-nav navbar-collapse collapse" id="navbarTogglerDemo01">                        
+                        <ul className="navbar-nav mt-2 mt-lg-0 align-items-center navbar-right">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/">Inicio</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="#">Link</NavLink>
+                                <NavLink className="nav-link" to="/Como-funciona">Cómo funciona</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link disabled" to="#" tabindex="-1" aria-disabled="true">Disabled</NavLink>
+                                <NavLink className="nav-link" to="/Calculadora-de-costos">Calculadora</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/Sobre-mi">Contacto</NavLink>
                             </li>
                         </ul>                
                     </div>
