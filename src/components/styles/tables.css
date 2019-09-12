@@ -9,14 +9,14 @@
   }
 
   .card-header {
-      background-color:rgb(243, 243, 37)
+      /* background-color:rgb(243, 243, 37) */
   }
 
   .card-body {
-    background-color: rgb(239, 240, 196)
+    /* background-color: rgb(239, 240, 196) */
   }
   .card-footer {
-      background-color:rgb(243, 243, 37)
+      /* background-color:rgb(243, 243, 37) */
   }
 
   .material-icons {

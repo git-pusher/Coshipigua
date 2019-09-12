@@ -70,7 +70,8 @@ class Tables extends React.Component {
                                     </div>                                 
                                     <div className="col-lg-2 col-md-12">
                                         <button type="submit" className="btn mb-2" >
-                                            <MaterialIcon icon="add" className="material-icons" onClick="validateInputs()"></MaterialIcon>
+                                        {/* onClick="validateInputs()" */}
+                                            <MaterialIcon icon="add" className="material-icons" ></MaterialIcon>
                                         </button>
                                     </div>
                                 </div>
