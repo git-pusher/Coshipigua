@@ -18,15 +18,15 @@ class Calculadora extends React.Component {
             <div className="container-fluid">
                 <div className="wellcome">
                     <h1 className="text-uppercase display-1">Calculadora</h1>              
-                    <hr className="divider"/>
+                    <hr className="divider mt-4 mb-4"/>
                 </div>
-                <div id="collaborate" class="clearfix">
+                <div class="clearfix" id="greeting">
                     <div class="text">
                         <p>Hola, ahora que ya conoces todo el desgloce de tus gastos para la elaboración de tu producto, vamos a introducir cada uno para realizar el cálculo.</p>
                         <p>Ya debes tener conocimiento de la clasificación de cada gasto para que el resultado sea correcto.</p>
                         <p>¿Estás listo?</p>
                     </div>
-                        <span class="cartoon"></span>
+                        <span class="calculator" id="animation-rotate"></span>
                         {/* <a href="/contact" class="contact">Contact us</a> */}
                 </div>
                 <hr className="divider"/>
