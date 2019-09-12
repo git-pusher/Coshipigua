@@ -11,16 +11,16 @@ class Salary extends React.Component {
         }
     }
 
-    
-
-
-    change = (event) => {
-        this.setState({description: event.target.value})
-        this.setState({quantity: event.target.value})
-
-        console.log(event.target.value);
-        
+    handleChange = (event) => {
+        console.log({
+            salary: event.target.salary,
+            value: event.target.value});        
     }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        console.log('Form was submitted');
+      };
     
     validateInputs = () => {
         var description = this.state.description;
@@ -42,31 +42,31 @@ class Salary extends React.Component {
 
     render(){
         return (
-            <div className="container month">
+            <div className="container month" onSubmit={this.handleSubmit}>
                 <form className="salaryMonth">
                     <h6>Introduce los siguientes valores de acuerdo a tu criterio:</h6>
                     <hr className="divider"/>
                     <div className="form-group row">
                         <label htmlFor="inputSalary" className="col-lg-7  col-form-label">¿Cuál es tu sueldo mensual?</label>
                         <div className="col-lg-4">
-                            <input type="number" min="0" className="form-control" ref={this.salary} placeholder="Sueldo mensual"/>
+                            <input type="number" min="0" className="form-control" id="salary" onChange={this.handleChange} placeholder="Sueldo mensual"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="inputDays" className="col-lg-7 col-form-label">¿Cuántos días trabajas a la semana?</label>
                         <div className="col-lg-4 col-sm-12">
-                            <input type="number" min="0" className="form-control" id="days" placeholder="Días trabajados"/>
+                            <input type="number" min="0" className="form-control" id="days" onChange={this.handleChange} placeholder="Días trabajados"/>
                         </div>
                     </div>
                     <div className="form-group row">
                         <label htmlFor="inputUtility" className="col-lg-7 col-form-label">¿Cuál será tu porcentaje de utilidad?</label>
                         <div className="col-lg-4 col-sm-12">
-                            <input type="number" min="0" className="form-control mb-2 mr-sm-2" id="utility" placeholder="Utilidad"></input>
+                            <input type="number" min="0" className="form-control mb-2 mr-sm-2" id="utility" onChange={this.handleChange} placeholder="Utilidad"></input>
                         </div>
                     </div>
                     <div className="form-group row">
                         <div className="col-lg-12">
-                        <button type="submit" className="btn btn-salary">Sign in</button>
+                        <button type="submit" className="btn btn-salary">Guardar</button>
                         </div>
                     </div>
                     </form>

@@ -1,6 +1,8 @@
 import React from 'react';
+import Details from './Details'
 import Tables from './Tables';
 import Salary from './Salary';
+
 
 class Steps extends React.Component {
     constructor(props){
@@ -10,7 +12,7 @@ class Steps extends React.Component {
 
     render() {
         return(
-        <div className="container-fluid">
+        <div className="container">
             <h1>ALGO</h1>
             <p>
                 <a className="btn btn-outline-warning" data-toggle="collapse" href="#stepOne"  aria-expanded="false" aria-controls="collapseExample">
@@ -35,6 +37,7 @@ class Steps extends React.Component {
                     <p>Paso 7.</p>
                 </button>
             </p>
+            <Details />
             <div className="collapse" id="stepOne">
                 <div className="container">
                     <Salary />
@@ -42,7 +45,7 @@ class Steps extends React.Component {
             </div>
             <div className="collapse" id="stepTwo">
                 <div className="container">
-                    <h1>Diseñar componente de los detalles del producto</h1>
+                    <Details />
                 </div>
             </div>
             <div className="collapse" id="stepThree">
