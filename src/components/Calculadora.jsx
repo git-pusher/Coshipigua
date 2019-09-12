@@ -1,6 +1,6 @@
 import React from 'react';
 import Salary from './Salary';
-import Tables from './Tables';
+// import Tables from './Tables';
 import Steps from './Steps';
 
 import './styles/calculadora.css';
@@ -20,13 +20,13 @@ class Calculadora extends React.Component {
                     <h1 className="text-uppercase display-1">Calculadora</h1>              
                     <hr className="divider mt-4 mb-4"/>
                 </div>
-                <div class="clearfix" id="greeting">
-                    <div class="text">
+                <div className="clearfix" id="greeting">
+                    <div className="text">
                         <p>Hola, ahora que ya conoces todo el desgloce de tus gastos para la elaboración de tu producto, vamos a introducir cada uno para realizar el cálculo.</p>
                         <p>Ya debes tener conocimiento de la clasificación de cada gasto para que el resultado sea correcto.</p>
                         <p>¿Estás listo?</p>
                     </div>
-                        <span class="calculator" id="animation-rotate"></span>
+                        <span className="calculator" id="animation-rotate"></span>
                         {/* <a href="/contact" class="contact">Contact us</a> */}
                 </div>
                 <hr className="divider"/>

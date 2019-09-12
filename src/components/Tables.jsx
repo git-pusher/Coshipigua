@@ -21,7 +21,7 @@ class Tables extends React.Component {
     }
     
     validateInputs = () => {
-        var description = this.state.description;
+        var description = description.value;
 
         if(description){
             description.addClass('is-invalid')
@@ -45,7 +45,7 @@ class Tables extends React.Component {
                     <div className="col-md-9">
                         <div className="card my-5 bg-light text-center sueldo">
                             <div className="card-header">
-                                <h1>Materia prima</h1>
+                                <h1>{this.props.title}</h1>
                             </div>
                             <div className="card-body">
                                 <table className="table table-hover"> 
