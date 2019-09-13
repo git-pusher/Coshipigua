@@ -1,7 +1,7 @@
 import React from 'react';
-import Salary from './Salary';
-// import Tables from './Tables';
-import Steps from './Steps';
+// import Salary from './Salary';
+import Tables from './Tables';
+// import Steps from './Steps';
 
 import './styles/calculadora.css';
 
@@ -10,7 +10,7 @@ class Calculadora extends React.Component {
 		super(props);
 		this.state = {}
     }
-
+ 
 
     
     render () {
@@ -30,9 +30,9 @@ class Calculadora extends React.Component {
                 </div>
                 <hr className="divider"/>
                 <div className="calculadora">
-                    <Steps />
-                    {/* <Salary />
-                    <Tables /> */}
+                    <Tables />
+                    {/* <Steps /> */}
+                    {/* <Salary /> */}
                 </div>
             </div>
         );

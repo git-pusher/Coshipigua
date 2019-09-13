@@ -4,44 +4,42 @@ import'./styles/tables.css';
 
 
 class Tables extends React.Component {
-    constructor(props) {
-		super(props);
-		this.state = {
-            // description: '',
-            // quantity: ''
+    state = {
+        description: '',
+        quantity: ''
         }
-    }
 
     handleChange = event => {
-        
-        console.log({
-            description: event.target.description,
-            value: event.target.value});        
+        this.setState({
+            [event.target.name]: event.target.value,
+          });                 
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        console.log('Form was submitted');
+        console.log(this.state);
     }
     
     handleClick  = event => {
-        console.log("click");
-        
+        event.preventDefault();
+        console.log('Form was submitted');
+        console.log(this.state);
     }
 
-    validateInputs = () => {
-        var description = description.value;
-
-        if(description){
-            description.addClass('is-invalid')
-        }
+    validateInputs = (event) => {
+        event.target.name= event.target.value
+        console.log('hola');
         
-        //verifica que no sea nulo o vacío
-        // if( description.value() && quantity.value() )// add()
+        // if(description === '') {
+        //     description.addClassName('is-invalid')
+        // }
+          
       }
 
 
 
-    add = (e) => {
-        // e.preventDefault();
-        console.log('guardando');
-    }
-
+   
     render(){
         return (
             <div className="container">
@@ -67,33 +65,44 @@ class Tables extends React.Component {
                             <div className="card-footer">
                                 <div className="row mb-2">
                                     <div className="col-lg-5 col-md-12" >
-                                        <input type="text" 
-                                               className="form-control mb-2 mr-sm-2" 
-                                               id="description" 
-                                               onChange={this.handleChange} 
-                                               placeholder="Descripción"
-                                            />
+                                        <input 
+                                            className="form-control mb-2 mr-sm-2" 
+                                            name="description"
+                                            type="text" 
+                                            id="description" 
+                                            placeholder="Descripción"
+                                            onChange={this.handleChange} 
+                                            value={this.state.description}
+                                        />
                                     </div>
                                     <div className="col-lg-5 col-md-12">
-                                        <input type="number" 
-                                               min="0" 
-                                               className="form-control mb-2 mr-sm-2" 
-                                               id="quantity" 
-                                               onChange={this.handleChange} 
-                                               placeholder="Cantidad"
-                                            />
+                                        <input 
+                                            name="quantity"
+                                            type="number" 
+                                            min="0" 
+                                            className="form-control mb-2 mr-sm-2" 
+                                            id="quantity" 
+                                            placeholder="Cantidad"
+                                            onChange={this.handleChange} 
+                                            value={this.state.quantity}
+                                        />
                                     </div>                                 
                                     <div className="col-lg-2 col-md-12">
-                                        <button type="submit" className="btn mb-2" >                                        
+                                        <button 
+                                            className="btn mb-2" 
+                                            onClick={this.validateInputs}>                                        
                                             <MaterialIcon icon="add" className="material-icons" ></MaterialIcon>
                                         </button>
                                     </div>                                    
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-lg-12">
-                                        <button type="submit" 
-                                                className="btn btn-salary" 
-                                                onClick={this.handleClick}>Guardar</button>
+                                        <button 
+                                            // type="submit" 
+                                            className="btn btn-salary" 
+                                            onClick={this.handleClick}>
+                                            Guardar
+                                        </button>
                                     </div>
                                 </div>
                             </div>

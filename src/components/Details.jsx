@@ -2,20 +2,26 @@ import React from 'react';
 import './styles/details.css'
 
 class Details extends React.Component {
-  state = {};
+  state = {
+    nameProduct: '',
+    hours: '',
+    date: ''
+  };
 
-  handleChange = e => {
+  handleChange = event => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  handleClick = e => {
-    console.log('Button was clicked');
+  handleClick = event => {
+    event.preventDefault();
+        console.log('Form was submitted');
+        console.log(this.state);
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault();
     console.log('Form was submitted');
     console.log(this.state);
   };
@@ -27,10 +33,12 @@ class Details extends React.Component {
           <div className="form-group">
             <label>Nombre del producto:</label>
             <input
-              onChange={this.handleChange}
               className="form-control"
-              type="text"
               name="nameProduct"
+              type="text"
+              id="nameProduct"
+              placeholder="Nombre del producto"
+              onChange={this.handleChange}
               value={this.state.nameProduct}
             />
           </div>
@@ -38,11 +46,13 @@ class Details extends React.Component {
           <div className="form-group">
             <label>Horas trabajadas</label>
             <input
-              onChange={this.handleChange}
               className="form-control"
+              name="hours"
               type="number"
               min="0"
-              name="hours"
+              id="hours"
+              placeholder="Horas invertidas en el producto"
+              onChange={this.handleChange}
               value={this.state.hours}
             />
           </div>
@@ -50,15 +60,18 @@ class Details extends React.Component {
           <div className="form-group">
             <label>Fecha de término:</label>
             <input
-              onChange={this.handleChange}
               className="form-control"
               type="date"
               name="date"
+              id="date"
+              onChange={this.handleChange}
               value={this.state.date}
             />
           </div>          
 
-          <button onClick={this.handleClick} className="btn btn-salary">
+          <button 
+            className="btn btn-salary"
+            onClick={this.handleClick}> 
             Guardar
           </button>
         </form>

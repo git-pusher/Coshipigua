@@ -4,46 +4,32 @@ import'./styles/salary.css';
 
 
 class Salary extends React.Component {
-    constructor(props) {
-		super(props);
-        this.salary = React.createRef()
-		this.state = {
-        }
+    state = {
+        salary: '',
+        days: '',
+        hours: ''
     }
 
-    handleChange = (event) => {
-        console.log({
-            salary: event.target.salary,
-            value: event.target.value});        
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value,
+          }); 
     }
 
-    handleSubmit = e => {
-        e.preventDefault();
+    handleSubmit = event => {
+        event.preventDefault();
         console.log('Form was submitted');
-      };
-    
-    validateInputs = () => {
-        var description = this.state.description;
-
-        if(description){
-            description.addClass('is-invalid')
-        }
-        
-        //verifica que no sea nulo o vacío
-        // if( description.value() && quantity.value() )// add()
-      }
-
-
-
-    add = (e) => {
-        // e.preventDefault();
-        console.log('guardando');
+        console.log(this.state);
     }
+    
+    
+
+    
 
     render(){
         return (
-            <div className="container month" onSubmit={this.handleSubmit}>
-                <form className="salaryMonth">
+            <div className="container month">
+                <form className="salaryMonth" onSubmit={this.handleSubmit}>
                     <h6>Introduce los siguientes valores de acuerdo a tu criterio:</h6>
                     <hr className="divider"/>
                     <div className="form-group row">
@@ -51,13 +37,16 @@ class Salary extends React.Component {
                                className="col-lg-7  col-form-label">¿Cuál es tu sueldo mensual?
                         </label>
                         <div className="col-lg-4">
-                            <input type="number" 
-                                   min="0" 
-                                   className="form-control" 
-                                   id="salary" 
-                                   onChange={this.handleChange} 
-                                   placeholder="Sueldo mensual"
-                                />
+                            <input
+                                name="salary"
+                                type="number" 
+                                min="0" 
+                                className="form-control" 
+                                id="salary" 
+                                placeholder="Sueldo mensual"
+                                onChange={this.handleChange} 
+                                value={this.state.salary}
+                            />
                         </div>
                     </div>
                     <div className="form-group row">
@@ -65,13 +54,16 @@ class Salary extends React.Component {
                                className="col-lg-7 col-form-label">¿Cuántos días trabajas a la semana?
                         </label>
                         <div className="col-lg-4 col-sm-12">
-                            <input type="number" 
-                                   min="0" 
-                                   className="form-control" 
-                                   id="days" 
-                                   onChange={this.handleChange} 
-                                   placeholder="Días trabajados"
-                                />
+                            <input
+                                className="form-control" 
+                                name="days" 
+                                type="number" 
+                                min="0" 
+                                id="days" 
+                                placeholder="Días trabajados"
+                                onChange={this.handleChange} 
+                                value={this.state.days}
+                            />
                         </div>
                     </div>
                     <div className="form-group row">
@@ -79,17 +71,25 @@ class Salary extends React.Component {
                                className="col-lg-7 col-form-label">¿Cuál será tu porcentaje de utilidad?
                         </label>
                         <div className="col-lg-4 col-sm-12">
-                            <input type="number" 
-                                   min="0" className="form-control mb-2 mr-sm-2" 
-                                   id="utility" 
-                                   onChange={this.handleChange} 
-                                   placeholder="Utilidad"
-                                />
+                            <input 
+                                name="utulity"
+                                type="number" 
+                                min="0" className="form-control mb-2 mr-sm-2" 
+                                id="utility" 
+                                placeholder="Utilidad"
+                                onChange={this.handleChange} 
+                                value={this.state.utility}
+                            />
                         </div>
                     </div>
                     <div className="form-group row">
                         <div className="col-lg-12">
-                        <button type="submit" className="btn btn-salary">Guardar</button>
+                            <button 
+                                className="btn btn-salary"
+                                onClick={this.handleClick}>
+                                {/* type="submit"  */}
+                                Guardar
+                            </button>
                         </div>
                     </div>
                     </form>
