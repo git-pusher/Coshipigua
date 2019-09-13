@@ -15,27 +15,62 @@ class Steps extends React.Component {
         <div className="container">
             <h1>ALGO</h1>
             <p>
-                <a className="btn btn-outline-warning" data-toggle="collapse" href="#stepOne"  aria-expanded="false" aria-controls="collapseExample">
+                <a className="btn btn-outline-warning" 
+                   data-toggle="collapse" 
+                   href="#stepOne"  
+                   role="button"
+                   aria-expanded="false" 
+                   aria-controls="collapseExample">
                     Paso 1.
                 </a>
-                <a className="btn btn-outline-warning" data-toggle="collapse" href="#stepTwo" role="button" aria-expanded="false" aria-controls="stepTwo">
+                <a className="btn btn-outline-warning" 
+                   data-toggle="collapse" 
+                   href="#stepTwo" 
+                   role="button" 
+                   aria-expanded="false" 
+                   aria-controls="stepTwo">
                     Paso 2.
                 </a>
-                <a className="btn btn-outline-warning" data-toggle="collapse" href="#stepThree" role="button" aria-expanded="false" aria-controls="stepThree">
+                <a className="btn btn-outline-warning" 
+                   data-toggle="collapse" 
+                   href="#stepThree" 
+                   role="button" 
+                   aria-expanded="false" 
+                   aria-controls="stepThree">
                     Paso 3.
                 </a>
-                <a className="btn btn-outline-warning" data-toggle="collapse" href="#stepFour" role="button" aria-expanded="false" aria-controls="stepFour">
+                <a className="btn btn-outline-warning" 
+                   data-toggle="collapse" 
+                   href="#stepFour" 
+                   role="button" 
+                   aria-expanded="false" 
+                   aria-controls="stepFour">
                     Paso 4.
                 </a>
-                <a className="btn btn-outline-warning" data-toggle="collapse" href="#stepFive" role="button" aria-expanded="false" aria-controls="stepFive">
+                <a className="btn btn-outline-warning" 
+                   data-toggle="collapse" 
+                   href="#stepFive" 
+                   role="button" 
+                   aria-expanded="false" 
+                   aria-controls="stepFive">
                     Paso 5.
                 </a>
-                <a className="btn btn-outline-warning" data-toggle="collapse" href="#stepSix" role="button" aria-expanded="false" aria-controls="stepSix">
+                <a className="btn btn-outline-warning" 
+                   data-toggle="collapse" 
+                   href="#stepSix" 
+                   role="button" 
+                   aria-expanded="false" 
+                   aria-controls="stepSix">
                     Paso 6.
                 </a>
-                <button className="btn btn-outline-warning" type="button" data-toggle="collapse" data-target="#stepSeven" aria-expanded="false" aria-controls="stepSeven">
-                    <p>Paso 7.</p>
-                </button>
+                <a className="btn btn-outline-warning" 
+                   data-toggle="collapse" 
+                   href="#stepSeven" 
+                   role="button" 
+                   aria-expanded="false" 
+                   aria-controls="stepSeven">
+                   Paso 7.
+                </a>
             </p>
             {/* <Details /> */}
             <div className="collapse" id="stepOne">

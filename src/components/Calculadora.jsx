@@ -27,7 +27,6 @@ class Calculadora extends React.Component {
                         <p>¿Estás listo?</p>
                     </div>
                         <span className="calculator" id="animation-rotate"></span>
-                        {/* <a href="/contact" class="contact">Contact us</a> */}
                 </div>
                 <hr className="divider"/>
                 <div className="calculadora">
