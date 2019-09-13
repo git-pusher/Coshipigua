@@ -71,7 +71,8 @@ class Tables extends React.Component {
                                                className="form-control mb-2 mr-sm-2" 
                                                id="description" 
                                                onChange={this.handleChange} 
-                                               placeholder="Descripción"/>
+                                               placeholder="Descripción"
+                                            />
                                     </div>
                                     <div className="col-lg-5 col-md-12">
                                         <input type="number" 
@@ -79,7 +80,8 @@ class Tables extends React.Component {
                                                className="form-control mb-2 mr-sm-2" 
                                                id="quantity" 
                                                onChange={this.handleChange} 
-                                               placeholder="Cantidad"/>
+                                               placeholder="Cantidad"
+                                            />
                                     </div>                                 
                                     <div className="col-lg-2 col-md-12">
                                         <button type="submit" className="btn mb-2" >                                        

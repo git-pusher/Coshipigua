@@ -2,9 +2,7 @@ import React from 'react';
 import './styles/details.css'
 
 class Details extends React.Component {
-  state = {
-    firstName: '',
-  };
+  state = {};
 
   handleChange = e => {
     this.setState({
