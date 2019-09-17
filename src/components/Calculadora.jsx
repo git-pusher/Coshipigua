@@ -1,7 +1,7 @@
 import React from 'react';
 // import Salary from './Salary';
 import Tables from './Tables';
-// import Steps from './Steps';
+import Steps from './Steps';
 
 import './styles/calculadora.css';
 
@@ -29,8 +29,18 @@ class Calculadora extends React.Component {
                         <span className="calculator" id="animation-rotate"></span>
                 </div>
                 <hr className="divider"/>
-                <div className="calculadora">
-                    <Tables />
+                <div className="container">
+                    <div className="row">
+                        <Steps />
+                        <div className="col">
+                        <Tables />
+                        </div>
+                        <div className="col">
+
+                        </div>
+                    </div>
+
+                  
                     {/* <Steps /> */}
                     {/* <Salary /> */}
                 </div>

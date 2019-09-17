@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
+import Tables from '../components/Tables';
 
 
 class Coshipigua extends React.Component {
@@ -14,6 +15,8 @@ class Coshipigua extends React.Component {
             <div>
                 <Hero />
                 <Footer />
+                <Tables 
+                title="PRUEBA"/>
             </div>
         );
     }

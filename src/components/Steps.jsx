@@ -72,7 +72,6 @@ class Steps extends React.Component {
                    Paso 7.
                 </a>
             </p>
-            {/* <Details /> */}
             <div className="collapse" id="stepOne">
                 <div className="container">
                     <Salary />

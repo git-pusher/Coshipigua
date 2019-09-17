@@ -6,7 +6,7 @@ import'./styles/tables.css';
 class Tables extends React.Component {
     state = {
         description: '',
-        quantity: ''
+        price: ''
         }
 
     handleChange = event => {
@@ -27,13 +27,12 @@ class Tables extends React.Component {
         console.log(this.state);
     }
 
-    validateInputs = (event) => {
+    addItems = (event) => {
         event.target.name= event.target.value
         console.log('hola');
+
         
-        // if(description === '') {
-        //     description.addClassName('is-invalid')
-        // }
+        
           
       }
 
@@ -54,11 +53,12 @@ class Tables extends React.Component {
                                     <thead>
                                         <tr>
                                             <th scope="col">Descripción</th>
-                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Precio</th>
                                         <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -77,20 +77,20 @@ class Tables extends React.Component {
                                     </div>
                                     <div className="col-lg-5 col-md-12">
                                         <input 
-                                            name="quantity"
+                                            name="price"
                                             type="number" 
                                             min="0" 
                                             className="form-control mb-2 mr-sm-2" 
-                                            id="quantity" 
-                                            placeholder="Cantidad"
+                                            id="price" 
+                                            placeholder="Precio"
                                             onChange={this.handleChange} 
-                                            value={this.state.quantity}
+                                            value={this.state.price}
                                         />
                                     </div>                                 
                                     <div className="col-lg-2 col-md-12">
                                         <button 
                                             className="btn mb-2" 
-                                            onClick={this.validateInputs}>                                        
+                                            onClick={this.addItems}>                                        
                                             <MaterialIcon icon="add" className="material-icons" ></MaterialIcon>
                                         </button>
                                     </div>                                    
