@@ -5,10 +5,8 @@ import Tables from '../components/Tables';
 
 
 class Coshipigua extends React.Component {
-    constructor(props) {
-		super(props);
-		this.state = {}
-    }
+  
+    
     
     render () {
         return (

@@ -3,11 +3,17 @@ import MaterialIcon from 'material-icons-react';
 import'./styles/tables.css';
 
 
-class Tables extends React.Component {
-    state = {
-        description: '',
-        price: ''
-        }
+class Tables extends React.Component {   
+    constructor() {
+        super();
+        this.state = { 
+          items: [], 
+          description: '',
+          price: '' 
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
 
     handleChange = event => {
         this.setState({
@@ -15,27 +21,45 @@ class Tables extends React.Component {
           });                 
     }
 
-    handleSubmit = event => {
-        event.preventDefault();
-        console.log('Form was submitted');
-        console.log(this.state);
+    handleSubmit= (e) =>  {
+    e.preventDefault();
+    if (!this.state.description.length && !this.state.price.length) {
+      return alert('No has ingresado datos.');
     }
+    const newItem = {
+      id: Date.now(),
+      description: this.state.description,
+      price: this.state.price
+    };
+    this.setState(state => ({
+      items: state.items.concat(newItem),
+      description: '',
+      price: ''
+    }));
+  }
     
-    handleClick  = event => {
-        event.preventDefault();
-        console.log('Form was submitted');
-        console.log(this.state);
-    }
+    // handleClick  = event => {
+    //     event.preventDefault();
+    //     console.log('Form was submitted');
+    //     console.log(this.state);
+    // }
 
-    addItems = (event) => {
-        event.target.name= event.target.value
-        console.log('hola');
-
-        
-        
-          
-      }
-
+    mostrarDatos= () => {
+        return (      
+          <table>
+            <thead>
+              <tr>
+                {this.state.items.map(item => (
+                    <tr key={item.id}>
+                      <th scope="col-6">{item.description}</th>
+                      <th scope="col-6">{item.price}</th>
+                    </tr>
+                  ))}
+              </tr> 
+            </thead>
+          </table>               
+          );
+        }
 
 
    
@@ -58,12 +82,16 @@ class Tables extends React.Component {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                        <tr>
+                                            <td>
+                                                {this.mostrarDatos()}
+                                            </td>
+                                        </tr> 
                                     </tbody>
                                 </table>
                             </div>
                             <div className="card-footer">
-                                <div className="row mb-2">
+                                <form className="row mb-2" onSubmit={this.handleSubmit}>
                                     <div className="col-lg-5 col-md-12" >
                                         <input 
                                             className="form-control mb-2 mr-sm-2" 
@@ -90,17 +118,19 @@ class Tables extends React.Component {
                                     <div className="col-lg-2 col-md-12">
                                         <button 
                                             className="btn mb-2" 
-                                            onClick={this.addItems}>                                        
+                                            // onClick={this.state.items.length + 1}
+                                            >
+                                            Agregar #{this.state.items.length + 1}                                       
                                             <MaterialIcon icon="add" className="material-icons" ></MaterialIcon>
                                         </button>
                                     </div>                                    
-                                </div>
+                                </form>
                                 <div className="form-group row">
                                     <div className="col-lg-12">
                                         <button 
                                             // type="submit" 
                                             className="btn btn-salary" 
-                                            onClick={this.handleClick}>
+                                            >
                                             Guardar
                                         </button>
                                     </div>
