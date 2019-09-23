@@ -61,13 +61,18 @@ class Tables extends React.Component {
           );
         }
 
-
+// updateTotals = () => {
+//     let price = 0;
+//     items.map(item => {
+//         price += item.price.value
+//     })
+// }
    
     render(){
         return (
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-md-9">
+                    <div className="col-md-12">
                         <div className="card my-5 bg-light text-center sueldo">
                             <div className="card-header">
                                 <h1>{this.props.title}</h1>
@@ -116,12 +121,9 @@ class Tables extends React.Component {
                                         />
                                     </div>                                 
                                     <div className="col-lg-2 col-md-12">
-                                        <button 
-                                            className="btn mb-2" 
-                                            // onClick={this.state.items.length + 1}
-                                            >
-                                            Agregar #{this.state.items.length + 1}                                       
+                                        <button className="btn mb-2">                                                                                 
                                             <MaterialIcon icon="add" className="material-icons" ></MaterialIcon>
+                                            #{this.state.items.length + 1}  
                                         </button>
                                     </div>                                    
                                 </form>
