@@ -5,7 +5,7 @@
     -webkit-box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62);
     -moz-box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62);
     box-shadow: 10px 10px 20px 0px rgba(21, 23, 24, 0.62); 
-    max-width: 50%;    
+    max-width: 100%;    
     margin-bottom: 15px;
     padding: 10px
 }

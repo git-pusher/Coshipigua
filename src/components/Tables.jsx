@@ -75,7 +75,7 @@ class Tables extends React.Component {
                     <div className="col-md-12">
                         <div className="card my-5 bg-light text-center sueldo">
                             <div className="card-header">
-                                <h1>{this.props.title}</h1>
+                                <h5>{this.props.title}</h5>
                             </div>
                             <div className="card-body">
                                 <table className="table table-hover"> 

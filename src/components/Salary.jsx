@@ -30,7 +30,7 @@ class Salary extends React.Component {
         return (
             <div className="container month">
                 <form className="salaryMonth" onSubmit={this.handleSubmit}>
-                    <h6>Introduce los siguientes valores de acuerdo a tu criterio:</h6>
+                    <h6 className="">Introduce los siguientes valores de acuerdo a tu criterio:</h6>
                     <hr className="divider"/>
                     <div className="form-group row">
                         <label htmlFor="inputSalary" 
@@ -49,7 +49,7 @@ class Salary extends React.Component {
                             />
                         </div>
                     </div>
-                    <div className="form-group row">
+                    {/* <div className="form-group row">
                         <label htmlFor="inputDays" 
                                className="col-lg-7 col-form-label">¿Cuántos días trabajas a la semana?
                         </label>
@@ -65,7 +65,7 @@ class Salary extends React.Component {
                                 value={this.state.days}
                             />
                         </div>
-                    </div>
+                    </div> */}
                     <div className="form-group row">
                         <label htmlFor="inputUtility" 
                                className="col-lg-7 col-form-label">¿Cuál será tu porcentaje de utilidad?

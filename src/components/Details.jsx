@@ -29,6 +29,8 @@ class Details extends React.Component {
   render() {
     return (
       <div className="container details">
+        <h6>Introduce los siguientes datos</h6>
+        <hr className="divider"/>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Nombre del producto:</label>
