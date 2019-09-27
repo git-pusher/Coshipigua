@@ -68,7 +68,8 @@ class Salary extends React.Component {
                     </div> */}
                     <div className="form-group row">
                         <label htmlFor="inputUtility" 
-                               className="col-lg-7 col-form-label">¿Cuál será tu porcentaje de utilidad?
+                               className="col-lg-7 col-form-label">
+                                ¿Cuál será tu porcentaje de utilidad?
                         </label>
                         <div className="col-lg-4 col-sm-12">
                             <input 

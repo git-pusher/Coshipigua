@@ -32,17 +32,22 @@ class Details extends React.Component {
         <h6>Introduce los siguientes datos</h6>
         <hr className="divider"/>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>Nombre del producto:</label>
-            <input
-              className="form-control"
-              name="nameProduct"
-              type="text"
-              id="nameProduct"
-              placeholder="Nombre del producto"
-              onChange={this.handleChange}
-              value={this.state.nameProduct}
-            />
+          <div className="form-group row">
+            <label htmlFor="inputUtility" 
+              className="col-lg-6 col-form-label">
+              Nombre del producto:
+            </label>
+            <div className="col-lg-4 col-sm-12">
+              <input
+                className="form-control"
+                name="nameProduct"
+                type="text"
+                id="nameProduct"
+                placeholder="Nombre del producto"
+                onChange={this.handleChange}
+                value={this.state.nameProduct}
+              />
+            </div>
           </div>
 
           <div className="form-group">

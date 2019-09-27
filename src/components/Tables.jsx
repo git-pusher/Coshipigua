@@ -1,6 +1,6 @@
 import React from 'react';
 import MaterialIcon from 'material-icons-react';
-import'./styles/tables.css';
+import './styles/tables.css';
 
 
 class Tables extends React.Component {   
@@ -22,58 +22,60 @@ class Tables extends React.Component {
     }
 
     handleSubmit= (e) =>  {
-    e.preventDefault();
-    if (!this.state.description.length && !this.state.price.length) {
-      return alert('No has ingresado datos.');
+        e.preventDefault();
+        if (!this.state.description.length && !this.state.price.length) {
+        return alert('No has ingresado datos.');
+        }
+        const newItem = {
+        id: Date.now(),
+        description: this.state.description,
+        price: this.state.price
+        };
+        this.setState(state => ({
+        items: state.items.concat(newItem),
+        description: '',
+        price: ''
+        }));
+     
     }
-    const newItem = {
-      id: Date.now(),
-      description: this.state.description,
-      price: this.state.price
-    };
-    this.setState(state => ({
-      items: state.items.concat(newItem),
-      description: '',
-      price: ''
-    }));
-  }
-    
+
+    // updateTotals = () => {
+    //     // let price = 0;
+    //     this.setState.price += price.value
+    // }
+
+  
     // handleClick  = event => {
     //     event.preventDefault();
     //     console.log('Form was submitted');
     //     console.log(this.state);
     // }
 
-    mostrarDatos= () => {
-        return (      
-          <table>
-            <thead>
-              <tr>
-                {this.state.items.map(item => (
-                    <tr key={item.id}>
-                      <th scope="col-6">{item.description}</th>
-                      <th scope="col-6">{item.price}</th>
-                    </tr>
-                  ))}
-              </tr> 
-            </thead>
-          </table>               
-          );
-        }
+ 
 
-// updateTotals = () => {
-//     let price = 0;
-//     items.map(item => {
-//         price += item.price.value
-//     })
-// }
+    mostrarDatos= () => {
+        return (    
+            <table className="table">            
+                <thead>            
+                    {this.state.items.map(item => (
+                        <tr key={item.id}>
+                        <th scope="col">{item.description}</th>
+                        <th scope="col">{item.price}</th>
+                        {/* <th></th> */}
+                        </tr>
+                    ))}
+                </thead>                
+            </table>  
+        );    
+    }
+
    
     render(){
         return (
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-12">
-                        <div className="card my-5 bg-light text-center sueldo">
+                        <div className="card mb-2 bg-light text-center sueldo">
                             <div className="card-header">
                                 <h5>{this.props.title}</h5>
                             </div>
@@ -87,12 +89,19 @@ class Tables extends React.Component {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
+                                        {/* <tr> */}
+                                            {/* <td> */}
                                                 {this.mostrarDatos()}
-                                            </td>
-                                        </tr> 
+                                            {/* </td> */}
+                                        {/* </tr>  */}
                                     </tbody>
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Totals</th>
+                                            <th id="price">0</th>                                        
+                                        <th></th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
                             <div className="card-footer">
@@ -124,6 +133,7 @@ class Tables extends React.Component {
                                         <button className="btn mb-2">                                                                                 
                                             <MaterialIcon icon="add" className="material-icons" ></MaterialIcon>
                                             #{this.state.items.length + 1}  
+                                            
                                         </button>
                                     </div>                                    
                                 </form>
