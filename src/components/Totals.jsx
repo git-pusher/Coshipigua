@@ -13,7 +13,27 @@ class Totals extends React.Component {
                         <h5>RESUMEN</h5>
                     </div>
                     <div className="card-body">
-                           
+                          <div className="salary">
+
+                          </div>
+                          <div className="details">
+
+                          </div>
+                          <div className="rawMaterial">
+
+                          </div>
+                          <div className="workforce">
+
+                          </div>
+                          <div className="fixedCosts">
+
+                          </div> 
+                          <div className="administrativeSalaries">
+                          
+                          </div> 
+                          <div className="additionalFeatures">
+                              
+                          </div> 
                     </div>
                     <div className="card-footer">                                
                         <div className="form-group row">

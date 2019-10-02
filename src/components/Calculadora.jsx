@@ -1,19 +1,28 @@
 import React from 'react';
-import Salary from './Salary';
 import Details from './Details';
-import Tables from './Tables';
+import Salary from './Salary';
 import Steps from './Steps';
+import Tables from './Tables';
 import Totals from './Totals';
 
 import './styles/calculadora.css';
 
 class Calculadora extends React.Component {
-    constructor(props) {
-		super(props);
-		this.state = {}
-    }
- 
+    state = { 
+        form: {
+            salary: '',
+            utility: ''
+        } 
+    };
 
+    handleChange = e => {
+        this.setState({
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            }
+        });
+    }
     
     render () {
         return (
@@ -36,57 +45,61 @@ class Calculadora extends React.Component {
                         <Steps />
                     </div>
                     <div className="row">
-                        <div className="col col-lg-6">
-                            {/* <Tables /> */}
-                                <div className="collapse" id="stepOne">
-                                    <div className="container">
-                                        <Salary />
-                                    </div>
-                                </div>
-                                <div className="collapse" id="stepTwo">
-                                    <div className="container">
-                                        <Details />
-                                    </div>
-                                </div>
-                                <div className="collapse" id="stepThree">
-                                    <div className="container">
-                                        <Tables 
-                                        title="MATERIA PRIMA"/>
-                                    </div>
-                                </div>
-                                <div className="collapse" id="stepFour">
-                                    <div className="container">
-                                        <Tables 
-                                        title="MANO DE OBRA"/>
-                                    </div>
-                                </div>
-                                <div className="collapse" id="stepFive">
-                                    <div className="container">
-                                        <Tables 
-                                        title="GASTOS FIJOS"/>
-                                    </div>
-                                </div>
-                                <div className="collapse" id="stepSix">
-                                    <div className="container">
-                                        <Tables 
-                                        title="SUELDOS ADMINISTRATIVOS"/>
-                                    </div>
-                                </div>
-                                <div className="collapse" id="stepSeven">
-                                    <div className="container">
-                                        <Tables 
-                                        title="EXTRAS"/>
-                                    </div>
-                                </div>
+                        <div className="col col-lg-6">                                                            <div className="collapse" id="stepOne">
+                            <div className="container">
+                                <Salary 
+                                    onChange={this.handleChange}
+                                    formValues={this.state.form}
+                                />
                             </div>
-                            <div className="col-lg-6">                            
-                                <div className="col">
-                                    <Totals />
-                                </div>
-                            </div> 
                         </div>
-                    </div>                             
-                </div>
+                        <div className="collapse" id="stepTwo">
+                            <div className="container">
+                                <Details />
+                            </div>
+                        </div>
+                        <div className="collapse" id="stepThree">
+                            <div className="container">
+                                <Tables 
+                                title="MATERIA PRIMA"/>
+                            </div>
+                        </div>
+                        <div className="collapse" id="stepFour">
+                            <div className="container">
+                                <Tables 
+                                title="MANO DE OBRA"/>
+                            </div>
+                        </div>
+                        <div className="collapse" id="stepFive">
+                            <div className="container">
+                                <Tables 
+                                title="GASTOS FIJOS"/>
+                            </div>
+                        </div>
+                        <div className="collapse" id="stepSix">
+                            <div className="container">
+                                <Tables 
+                                title="SUELDOS ADMINISTRATIVOS"/>
+                            </div>
+                        </div>
+                        <div className="collapse" id="stepSeven">
+                            <div className="container">
+                                <Tables 
+                                title="EXTRAS"/>
+                            </div>
+                        </div>
+                    </div>
+                <div className="col-lg-6">                            
+                    <div className="col">
+                        <Totals 
+                            salary = {this.state.form.salary}
+                            utility = {this.state.form.utility}
+                        />
+                    </div>
+                </div> 
+            </div>
+        </div>                             
+    </div>
              
                
         );

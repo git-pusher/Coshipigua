@@ -9,7 +9,8 @@ class Tables extends React.Component {
         this.state = { 
           items: [], 
           description: '',
-          price: '' 
+          price: '',
+          total: [] 
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,33 +27,19 @@ class Tables extends React.Component {
         if (!this.state.description.length && !this.state.price.length) {
         return alert('No has ingresado datos.');
         }
+        
         const newItem = {
         id: Date.now(),
         description: this.state.description,
-        price: this.state.price
+        price: this.state.price        
         };
         this.setState(state => ({
         items: state.items.concat(newItem),
         description: '',
         price: ''
         }));
-     
     }
-
-    // updateTotals = () => {
-    //     // let price = 0;
-    //     this.setState.price += price.value
-    // }
-
   
-    // handleClick  = event => {
-    //     event.preventDefault();
-    //     console.log('Form was submitted');
-    //     console.log(this.state);
-    // }
-
- 
-
     mostrarDatos= () => {
         return (    
             <table className="table">            
@@ -71,6 +58,8 @@ class Tables extends React.Component {
 
    
     render(){
+       
+
         return (
             <div className="container">
                 <div className="row justify-content-center">
@@ -95,7 +84,7 @@ class Tables extends React.Component {
                                             {/* </td> */}
                                         {/* </tr>  */}
                                     </tbody>
-                                    <thead class="thead-light">
+                                    <thead className="thead-light">
                                         <tr>
                                             <th>Totals</th>
                                             <th id="price">0</th>                                        

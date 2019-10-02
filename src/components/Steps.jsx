@@ -1,7 +1,7 @@
 import React from 'react';
-import Details from './Details'
-import Tables from './Tables';
-import Salary from './Salary';
+// import Details from './Details'
+// import Tables from './Tables';
+// import Salary from './Salary';
 
 
 class Steps extends React.Component {

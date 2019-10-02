@@ -33,27 +33,28 @@ class Details extends React.Component {
         <hr className="divider"/>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group row">
-            <label htmlFor="inputUtility" 
+            <label 
               className="col-lg-6 col-form-label">
               Nombre del producto:
             </label>
-            <div className="col-lg-4 col-sm-12">
-              <input
-                className="form-control"
+            <input
+                className="form-control col-lg-4 col-sm-12"
                 name="nameProduct"
                 type="text"
                 id="nameProduct"
                 placeholder="Nombre del producto"
                 onChange={this.handleChange}
                 value={this.state.nameProduct}
-              />
-            </div>
+              />            
           </div>
 
-          <div className="form-group">
-            <label>Horas trabajadas</label>
+          <div className="form-group row">
+            <label
+              className="col-lg-6 col-form-label">
+              Horas trabajadas
+            </label>
             <input
-              className="form-control"
+              className="form-control col-lg-4 col-sm-12"
               name="hours"
               type="number"
               min="0"
@@ -64,10 +65,13 @@ class Details extends React.Component {
             />
           </div>
           
-          <div className="form-group">
-            <label>Fecha de término:</label>
+          <div className="form-group row">
+            <label
+              className="col-lg-6 col-form-label">
+              Fecha de término:
+            </label>
             <input
-              className="form-control"
+              className="form-control col-lg-4 col-sm-12"
               type="date"
               name="date"
               id="date"
