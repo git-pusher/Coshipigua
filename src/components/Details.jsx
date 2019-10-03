@@ -2,17 +2,17 @@ import React from 'react';
 import './styles/details.css'
 
 class Details extends React.Component {
-  state = {
-    nameProduct: '',
-    hours: '',
-    date: ''
-  };
+  // state = {
+  //   nameProduct: '',
+  //   hours: '',
+  //   date: ''
+  // };
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
+  // handleChange = event => {
+  //   this.setState({
+  //     [event.target.name]: event.target.value,
+  //   });
+  // };
 
   handleClick = event => {
     event.preventDefault();
@@ -25,6 +25,8 @@ class Details extends React.Component {
     console.log('Form was submitted');
     console.log(this.state);
   };
+
+
 
   render() {
     return (
@@ -43,8 +45,8 @@ class Details extends React.Component {
                 type="text"
                 id="nameProduct"
                 placeholder="Nombre del producto"
-                onChange={this.handleChange}
-                value={this.state.nameProduct}
+                onChange={this.props.onChange}
+                value={this.props.formValues.nameProduct}
               />            
           </div>
 
@@ -60,8 +62,8 @@ class Details extends React.Component {
               min="0"
               id="hours"
               placeholder="Horas invertidas en el producto"
-              onChange={this.handleChange}
-              value={this.state.hours}
+              onChange={this.props.onChange}
+              value={this.props.formValues.hours}
             />
           </div>
           
@@ -75,16 +77,16 @@ class Details extends React.Component {
               type="date"
               name="date"
               id="date"
-              onChange={this.handleChange}
-              value={this.state.date}
+              onChange={this.props.onChange}
+              value={this.props.formValues.date}
             />
           </div>          
 
-          <button 
+          {/* <button 
             className="btn btn-salary"
             onClick={this.handleClick}> 
             Guardar
-          </button>
+          </button> */}
         </form>
       </div>
     );

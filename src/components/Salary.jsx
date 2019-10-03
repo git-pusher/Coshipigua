@@ -4,28 +4,28 @@ import'./styles/salary.css';
 
 
 class Salary extends React.Component {
-    state = {
-        salary: '',
-        utility: ''
-    }
+    // state = {
+    //     salary: '',
+    //     utility: ''
+    // }
 
-    handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value,
-          }); 
-    }
+    // handleChange = event => {
+    //     this.setState({
+    //         [event.target.name]: event.target.value,
+    //       }); 
+    // }
 
-    handleClick = e => {
+    handleClick = event => {
+        event.preventDefault();
         console.log('Button was clicked');
+        console.log(this.state);
     };
 
     handleSubmit = event => {
         event.preventDefault();
         console.log('Form was submitted');
         console.log(this.state);
-    }
-    
-    
+    }       
 
     
 
@@ -70,18 +70,18 @@ class Salary extends React.Component {
                             />
                         </div>
                     </div>
-                    <div className="form-group row">
+                    {/* <div className="form-group row">
                         <div className="col-lg-12">
                             <button 
                                 className="btn btn-salary"
                                 onClick={this.handleClick}>
-                                {/* type="submit"  */}
+                                // {/* type="submit"  
                                 Guardar
                             </button>
                         </div>
-                    </div>
-                    </form>
-                </div>
+                    </div> */}
+                </form>
+            </div>
         );
     }
 }
