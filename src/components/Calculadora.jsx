@@ -67,6 +67,7 @@ class Calculadora extends React.Component {
                                     id="WorkForce"
                                     salary = {this.state.form.salary}                            
                                     hours = {this.state.form.hours}
+                                    onSubmit={this.handleTable}
                                 />
 
 
@@ -98,6 +99,7 @@ class Calculadora extends React.Component {
 
                                     salary = {this.state.form.salary}                            
                                     hours = {this.state.form.hours}
+                                    onSubmit={this.handleTable}
                                 />
                             </div>
                         </div>

@@ -29,7 +29,7 @@ class WorkForce extends React.Component {
   
     handleClick = () => {
         console.log("se hizo click en enviar a resumen")
-        
+        this.props.onSubmit(this.state, this.props.id)
         
      }
        
