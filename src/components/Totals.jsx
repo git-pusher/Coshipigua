@@ -32,12 +32,12 @@ class Totals extends React.Component {
                     <table className="table table-bordered mt-4 ">                              
                       <tbody>
                         <tr>
-                          <th scope="">Materia prima</th>
-                          <th>$ {this.props.totalRawMaterial}</th>                                  
-                        </tr>
-                        <tr>
                           <th>Mano de obra</th>
                           <th>$ {this.props.totalWorkForce}</th>                                  
+                        </tr>
+                        <tr>
+                          <th scope="">Materia prima</th>
+                          <th>$ {this.props.totalRawMaterial}</th>                                  
                         </tr>
                         <tr>
                           <th>Gastos fijos</th>

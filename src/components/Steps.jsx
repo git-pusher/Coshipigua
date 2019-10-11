@@ -20,7 +20,7 @@ class Steps extends React.Component {
                         data-toggle="collapse" 
                         href="#stepOne"  
                         role="button"
-                        aria-expanded="false" 
+                        aria-expanded="true" 
                         aria-controls="collapseExample">
                         Paso 1. Salario
                     </a>
@@ -34,19 +34,19 @@ class Steps extends React.Component {
                     </a>
                     <a className="btn btn-outline-warning" 
                         data-toggle="collapse" 
-                        href="#stepThree" 
-                        role="button" 
-                        aria-expanded="false" 
-                        aria-controls="stepThree">
-                        Paso 3. Materia prima
-                    </a>
-                    <a className="btn btn-outline-warning" 
-                        data-toggle="collapse" 
                         href="#stepFour" 
                         role="button" 
                         aria-expanded="false" 
                         aria-controls="stepFour">
-                        Paso 4. Mano de obra
+                        Paso 3. Mano de obra
+                    </a>
+                    <a className="btn btn-outline-warning" 
+                        data-toggle="collapse" 
+                        href="#stepThree" 
+                        role="button" 
+                        aria-expanded="false" 
+                        aria-controls="stepThree">
+                        Paso 4. Materia prima
                     </a>
                     <a className="btn btn-outline-warning" 
                         data-toggle="collapse" 
