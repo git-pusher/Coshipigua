@@ -33,23 +33,23 @@ class Totals extends React.Component {
                       <tbody>
                         <tr>
                           <th scope="">Materia prima</th>
-                          <th>$ {this.props.total}</th>                                  
+                          <th>$ {this.props.totalRawMaterial}</th>                                  
                         </tr>
                         <tr>
                           <th>Mano de obra</th>
-                          <th>$ {this.props.total}</th>                                  
+                          <th>$ {this.props.totalWorkForce}</th>                                  
                         </tr>
                         <tr>
                           <th>Gastos fijos</th>
-                          <th>$ </th>                                  
+                          <th>$ {this.props.totalFixedCosts}</th>                                  
                         </tr>
                         <tr>
                           <th>Sueldos administrativos</th>
-                          <th>$ </th>                                  
+                          <th>$ {this.props.totalAdministrativeSalaries}</th>                                  
                         </tr>
                         <tr>
                           <th>Extras</th>
-                          <th>$ </th>
+                          <th>$ {this.props.totalAdditionalFeatures}</th>
                         </tr>
                       </tbody>
                     </table>
@@ -77,7 +77,6 @@ class Totals extends React.Component {
                         </tr>
                       </tbody>
                     </table>
-                         
                     </div>
                     <div className="card-footer ">                                
                         <div className="form-group row">

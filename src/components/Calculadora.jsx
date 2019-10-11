@@ -16,8 +16,11 @@ class Calculadora extends React.Component {
             hours: '',
             date: '',
         },
-        totalmp: 0,
-        totalmo: 0
+        totalRawMaterial: 0,
+        totalWorkForce: 0,
+        totalFixedCosts : 0,
+        totalAdministrativeSalaries: 0,
+        totalAdditionalFeatures: 0
     };
 
     handleChange = e => {
@@ -80,43 +83,43 @@ class Calculadora extends React.Component {
                                 <Tables 
                                     title="MATERIA PRIMA"
                                     onSubmit={this.handleTable}
-                                    id="mp"
+                                    id="RawMaterial"
                                 />
                             </div>
                         </div>
                         <div className="collapse" id="stepFour">
                             <div className="container">
                                 <Tables 
-                                title="MANO DE OBRA"
-                                onSubmit={this.handleTable}
-                                id="mo"
+                                    title="MANO DE OBRA"
+                                    onSubmit={this.handleTable}
+                                    id="WorkForce"
                                 />
                             </div>
                         </div>
                         <div className="collapse" id="stepFive">
                             <div className="container">
                                 <Tables 
-                                title="GASTOS FIJOS"
-                                onSubmit={this.handleTable}
-                                id="fixedCosts"
+                                    title="GASTOS FIJOS"
+                                    onSubmit={this.handleTable}
+                                    id="FixedCosts"
                                 />
                             </div>
                         </div>
                         <div className="collapse" id="stepSix">
                             <div className="container">
                                 <Tables 
-                                title="SUELDOS ADMINISTRATIVOS"
-                                onSubmit={this.handleTable}
-                                id="administrativeSalaries"
+                                    title="SUELDOS ADMINISTRATIVOS"
+                                    onSubmit={this.handleTable}
+                                    id="AdministrativeSalaries"
                                 />
                             </div>
                         </div>
                         <div className="collapse" id="stepSeven">
                             <div className="container">
                                 <Tables 
-                                title="EXTRAS"
-                                onSubmit={this.handleTable}
-                                id="dditionalFeatures"
+                                    title="EXTRAS"
+                                    onSubmit={this.handleTable}
+                                    id="AdditionalFeatures"
                                 />
                             </div>
                         </div>
@@ -129,8 +132,11 @@ class Calculadora extends React.Component {
                             nameProduct = {this.state.form.nameProduct}
                             hours = {this.state.form.hours}
                             date = {this.state.form.date}
-                            total = {this.state.totalmp}
-                            total = {this.state.totalmo}
+                            totalRawMaterial = {this.state.totalRawMaterial}
+                            totalWorkForce = {this.state.totalWorkForce}
+                            totalFixedCosts = {this.state.totalFixedCosts}
+                            totalAdministrativeSalaries = {this.state.totalAdministrativeSalaries}
+                            totalAdditionalFeatures = {this.state.totalAdditionalFeatures}
                         />
                     </div>
                 </div> 
