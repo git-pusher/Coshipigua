@@ -20,7 +20,7 @@ class Steps extends React.Component {
                         data-toggle="collapse" 
                         href="#stepOne"  
                         role="button"
-                        aria-expanded="true" 
+                        aria-expanded="false" 
                         aria-controls="collapseExample">
                         Paso 1. Salario
                     </a>

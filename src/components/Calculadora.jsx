@@ -4,6 +4,7 @@ import Salary from './Salary';
 import Steps from './Steps';
 import Tables from './Tables';
 import Totals from './Totals';
+import WorkForce from './WorkForce';
 
 import './styles/calculadora.css';
 
@@ -37,7 +38,7 @@ class Calculadora extends React.Component {
         console.info("%cHandleTable", "color:blue", {e: tableState, i : id});
         //this.setState({total: e.total})
         this.setState({
-            [`total${id}`] :tableState.total
+            [`total${id}`] : tableState.total
         })
     }
     render () {
@@ -59,6 +60,16 @@ class Calculadora extends React.Component {
                 <div className="container">
                     <div className="row">
                         <Steps />
+
+                        <WorkForce 
+                                    title="MANO DE OBRA"
+                                    // onSubmit={this.handleTable}
+                                    id="WorkForce"
+                                    salary = {this.state.form.salary}                            
+                                    hours = {this.state.form.hours}
+                                />
+
+
                     </div>
                     <div className="row">
                         <div className="col col-lg-6">                                                            
@@ -78,21 +89,24 @@ class Calculadora extends React.Component {
                                 />
                             </div>
                         </div>
+                        <div className="collapse" id="stepFour">
+                            <div className="container">
+                                <WorkForce 
+                                    title="MANO DE OBRA"
+                                    // onSubmit={this.handleTable}
+                                    id="WorkForce"
+
+                                    salary = {this.state.form.salary}                            
+                                    hours = {this.state.form.hours}
+                                />
+                            </div>
+                        </div>
                         <div className="collapse" id="stepThree">
                             <div className="container">
                                 <Tables 
                                     title="MATERIA PRIMA"
                                     onSubmit={this.handleTable}
                                     id="RawMaterial"
-                                />
-                            </div>
-                        </div>
-                        <div className="collapse" id="stepFour">
-                            <div className="container">
-                                <Tables 
-                                    title="MANO DE OBRA"
-                                    onSubmit={this.handleTable}
-                                    id="WorkForce"
                                 />
                             </div>
                         </div>

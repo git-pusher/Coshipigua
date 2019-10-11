@@ -36,7 +36,7 @@ class Tables extends React.Component {
             items: state.items.concat(newItem),
             description: '',
             price: '',
-            total: parseInt(this.state.price) + this.state.total
+            total: parseFloat(this.state.price) + this.state.total
         })
         );
     }
