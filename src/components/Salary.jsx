@@ -15,11 +15,11 @@ class Salary extends React.Component {
     //       }); 
     // }
 
-    handleClick = event => {
-        event.preventDefault();
-        console.log('Button was clicked');
-        console.log(this.state);
-    };
+    // handleClick = event => {
+    //     event.preventDefault();
+    //     console.log('Button was clicked');
+    //     console.log(this.state);
+    // };
 
     handleSubmit = event => {
         event.preventDefault();
@@ -69,17 +69,7 @@ class Salary extends React.Component {
                                 value={this.props.formValues.utility}
                             />
                         </div>
-                    </div>
-                    {/* <div className="form-group row">
-                        <div className="col-lg-12">
-                            <button 
-                                className="btn btn-salary"
-                                onClick={this.handleClick}>
-                                // {/* type="submit"  
-                                Guardar
-                            </button>
-                        </div>
-                    </div> */}
+                    </div>                    
                 </form>
             </div>
         );

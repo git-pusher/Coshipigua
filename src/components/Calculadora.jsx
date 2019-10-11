@@ -14,8 +14,10 @@ class Calculadora extends React.Component {
             utility: '',
             nameProduct: '',
             hours: '',
-            date: ''
-        } 
+            date: '',
+        },
+        totalmp: 0,
+        totalmo: 0
     };
 
     handleChange = e => {
@@ -25,8 +27,16 @@ class Calculadora extends React.Component {
                 [e.target.name]: e.target.value
             }
         });
+        console.log("handleChange");
     }
-    
+
+    handleTable = (tableState, id) => {
+        console.info("%cHandleTable", "color:blue", {e: tableState, i : id});
+        //this.setState({total: e.total})
+        this.setState({
+            [`total${id}`] :tableState.total
+        })
+    }
     render () {
         return (
             <div className="container-fluid">
@@ -48,14 +58,15 @@ class Calculadora extends React.Component {
                         <Steps />
                     </div>
                     <div className="row">
-                        <div className="col col-lg-6">                                                            <div className="collapse" id="stepOne">
-                            <div className="container">
-                                <Salary 
-                                    onChange={this.handleChange}
-                                    formValues={this.state.form}
-                                />
+                        <div className="col col-lg-6">                                                            
+                            <div className="collapse" id="stepOne">
+                                <div className="container">
+                                    <Salary 
+                                        onChange={this.handleChange}
+                                        formValues={this.state.form}
+                                    />
+                                </div>
                             </div>
-                        </div>
                         <div className="collapse" id="stepTwo">
                             <div className="container">
                                 <Details 
@@ -67,31 +78,46 @@ class Calculadora extends React.Component {
                         <div className="collapse" id="stepThree">
                             <div className="container">
                                 <Tables 
-                                title="MATERIA PRIMA"/>
+                                    title="MATERIA PRIMA"
+                                    onSubmit={this.handleTable}
+                                    id="mp"
+                                />
                             </div>
                         </div>
                         <div className="collapse" id="stepFour">
                             <div className="container">
                                 <Tables 
-                                title="MANO DE OBRA"/>
+                                title="MANO DE OBRA"
+                                onSubmit={this.handleTable}
+                                id="mo"
+                                />
                             </div>
                         </div>
                         <div className="collapse" id="stepFive">
                             <div className="container">
                                 <Tables 
-                                title="GASTOS FIJOS"/>
+                                title="GASTOS FIJOS"
+                                onSubmit={this.handleTable}
+                                id="fixedCosts"
+                                />
                             </div>
                         </div>
                         <div className="collapse" id="stepSix">
                             <div className="container">
                                 <Tables 
-                                title="SUELDOS ADMINISTRATIVOS"/>
+                                title="SUELDOS ADMINISTRATIVOS"
+                                onSubmit={this.handleTable}
+                                id="administrativeSalaries"
+                                />
                             </div>
                         </div>
                         <div className="collapse" id="stepSeven">
                             <div className="container">
                                 <Tables 
-                                title="EXTRAS"/>
+                                title="EXTRAS"
+                                onSubmit={this.handleTable}
+                                id="dditionalFeatures"
+                                />
                             </div>
                         </div>
                     </div>
@@ -103,6 +129,8 @@ class Calculadora extends React.Component {
                             nameProduct = {this.state.form.nameProduct}
                             hours = {this.state.form.hours}
                             date = {this.state.form.date}
+                            total = {this.state.totalmp}
+                            total = {this.state.totalmo}
                         />
                     </div>
                 </div> 

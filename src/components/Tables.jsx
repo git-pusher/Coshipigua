@@ -10,10 +10,8 @@ class Tables extends React.Component {
           items: [], 
           description: '',
           price: '',
-          total: [] 
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+          total: 0 
+        };        
       }
 
     handleChange = event => {
@@ -24,41 +22,48 @@ class Tables extends React.Component {
 
     handleSubmit= (e) =>  {
         e.preventDefault();
+        
         if (!this.state.description.length && !this.state.price.length) {
-        return alert('No has ingresado datos.');
+            return alert('No has ingresado datos.');
         }
         
         const newItem = {
-        id: Date.now(),
-        description: this.state.description,
-        price: this.state.price        
+            id: Date.now(),
+            description: this.state.description,
+            price: parseInt(this.state.price),
         };
         this.setState(state => ({
-        items: state.items.concat(newItem),
-        description: '',
-        price: ''
-        }));
+            items: state.items.concat(newItem),
+            description: '',
+            price: '',
+            total: parseInt(this.state.price) + this.state.total
+        })
+        );
     }
   
-    mostrarDatos= () => {
-        return (    
-            <table className="table">            
-                <thead>            
-                    {this.state.items.map(item => (
-                        <tr key={item.id}>
+    mostrarDatos = () => {
+       
+        return ( 
+            <>            
+                {this.state.items.map(item => (
+                    <tr key={item.id}>
                         <th scope="col">{item.description}</th>
-                        <th scope="col">{item.price}</th>
-                        {/* <th></th> */}
-                        </tr>
-                    ))}
-                </thead>                
-            </table>  
+                        <th scope="col">$ {item.price}</th>  
+                        <th></th>
+                    </tr>
+                ))}
+            </> 
         );    
     }
 
-   
-    render(){
+
+    handleClick = () => {
+        console.log("se hizo click en enviar a resumen")
+        this.props.onSubmit(this.state, this.props.id)
+        
+     }
        
+    render(){       
 
         return (
             <div className="container">
@@ -70,25 +75,21 @@ class Tables extends React.Component {
                             </div>
                             <div className="card-body">
                                 <table className="table table-hover"> 
-                                    <thead>
+                                    <thead className="thead-light">
                                         <tr>
-                                            <th scope="col">Descripción</th>
-                                            <th scope="col">Precio</th>
-                                        <th></th>
+                                            <th scope="col">DESCRIPCIÓN</th>
+                                            <th scope="col">PRECIO</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        {/* <tr> */}
-                                            {/* <td> */}
-                                                {this.mostrarDatos()}
-                                            {/* </td> */}
-                                        {/* </tr>  */}
+                                    <tbody className="">    
+                                        {this.mostrarDatos()}
                                     </tbody>
                                     <thead className="thead-light">
                                         <tr>
-                                            <th>Totals</th>
-                                            <th id="price">0</th>                                        
-                                        <th></th>
+                                            <th>Total</th>
+                                            <th>$ {this.state.total}</th>                                        
+                                            <th></th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -129,10 +130,10 @@ class Tables extends React.Component {
                                 <div className="form-group row">
                                     <div className="col-lg-12">
                                         <button 
-                                            // type="submit" 
-                                            className="btn btn-salary" 
-                                            >
-                                            Guardar
+                                            className="btn btn-salary"
+                                            onClick={this.handleClick}
+                                            value={this.state.total}>
+                                            Enviar a resumen
                                         </button>
                                     </div>
                                 </div>
